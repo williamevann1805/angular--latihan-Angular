@@ -5,13 +5,22 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
-  angka1 = parseInt((document.getElementById("a")as HTMLInputElement).value);
-  angka2 = parseInt((document.getElementById("b")as HTMLInputElement).value);
-
-  countGanjil()
+export class AppComponent{
+  angka1 : number;
+  angka2 : number;
+  hasil : number;
+  GanjilKah : boolean = true;
+  CountGanjil()
   {
-    var hasil = Math.pow(this.angka1, this.angka2);
-    alert(hasil);   
+    this.hasil = 1;
+    this.angka1 = parseInt((document.getElementById("a")as HTMLInputElement).value);
+    this.angka2 = parseInt((document.getElementById("b")as HTMLInputElement).value);
+    
+    this.hasil = Math.pow(this.angka1,this.angka2);
+
+    if(this.hasil % 2 == 0)
+    {
+      this.GanjilKah = false;
+    }
   }
 }

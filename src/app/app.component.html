@@ -1,0 +1,18 @@
+<div>
+  <input id = "a" type="text">
+  <br/>
+  <input id = "b" type="text">
+  <p>Hasil = {{hasil}} </p>
+  <button (click)="CountGanjil()">Count</button>
+</div>
+
+<ng-template
+  *ngIf = "GanjilKah; then showGanjil; else showGenap">
+</ng-template><!--kalau CountGanjil == true-->
+
+<ng-template #showGanjil>
+  <p>ganjil</p>
+</ng-template>
+<ng-template #showGenap>
+  <p>genap</p>
+</ng-template>
